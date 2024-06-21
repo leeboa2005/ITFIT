@@ -55,8 +55,8 @@ export default function SharePage() {
           {
             title: '테스트하러 가기 :)',
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href
+              mobileWebUrl: 'https://outsourcing-topaz.vercel.app/',
+              webUrl: 'https://outsourcing-topaz.vercel.app/'
             }
           }
         ]
