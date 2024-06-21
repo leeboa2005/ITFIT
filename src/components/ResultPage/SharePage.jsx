@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '../common/Button/Button';
 import { Container, Content, ErrorIcon, SuccessIcon } from './SharePage.style';
 
 export default function SharePage() {
+  const { position } = useParams();
+
   useEffect(() => {
     const VITE_KAKAO_KEY = import.meta.env.VITE_KAKAO_KEY;
     const { Kakao } = window;
@@ -21,7 +24,7 @@ export default function SharePage() {
 
   const handleLinkCopy = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(`${window.location.origin}/job-position/${position}`);
       toast.success('링크가 복사되었습니다 :)', {
         position: 'top-center',
         icon: <SuccessIcon />,
