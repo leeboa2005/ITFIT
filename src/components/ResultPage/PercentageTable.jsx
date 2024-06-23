@@ -8,20 +8,22 @@ const JobPositionTableWrap = styled.div`
   min-width: 300px;
   max-width: 600px;
   margin: 0 auto 30px auto;
-  box-sizing: border-box;
+
+  @media only screen and (max-width: 360px) {
+    min-width: 260px;
+    width: 100%;
+  }
 `;
 // 탑3 타이틀
 const JobPositionTitle = styled.h1`
-  font-weight: 700;
-  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-text-size-28);
   margin-top: var(--margin-medium);
   margin-bottom: var(--margin-small);
   color: #111827;
 `;
 // 탑3 리스트
 const JobPositionRanking = styled.ul`
-  list-style: none;
-  padding: 0;
   margin-bottom: var(--margin-small);
 `;
 const JobItem = styled.li`
@@ -47,7 +49,7 @@ const JobItem = styled.li`
     display: flex;
     flex-wrap: wrap;
     span {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       margin-right: 5px;
     }
   }
@@ -56,11 +58,14 @@ const JobItem = styled.li`
     display: flex;
     align-items: center;
     margin-right: 10px;
+    @media only screen and (max-width: 360px) {
+      margin-right: 5px;
+    }
   }
 
   span {
     color: #585858;
-    font-weight: 400;
+    font-weight: var(--font-weight-medium);
   }
 `;
 
@@ -75,12 +80,15 @@ const JobNames = styled.div`
   span {
     margin-right: 5px;
     font-weight: 400;
-    color: #111827;
-    line-height: 1.4;
+    color: var(--text-color);
   }
 
-  @media only screen and (max-width: 450px) {
-    max-width: 200px;
+  @media only screen and (max-width: 420px) {
+    max-width: 180px;
+  }
+
+  @media only screen and (max-width: 360px) {
+    max-width: 160px;
   }
 `;
 
@@ -100,7 +108,7 @@ const JobItemNumber = styled.div`
     span {
       font-size: 17px;
       font-weight: 700;
-      color: #5a6afb;
+      color: var(--main-color);
     }
     @media only screen and (max-width: 734px) {
       margin-right: 10px;

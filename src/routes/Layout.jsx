@@ -33,17 +33,17 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  overflow: hidden; /* 스크롤바 제거 */
+  overflow: hidden;
   width: 100%;
   min-width: 300px;
   max-width: 600px;
   min-height: calc(100vh - 50px);
-  padding: 96px 40px;
+  padding: 105px 40px;
   background: white;
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.12));
 
   @media only screen and (max-width: 460px) {
-    padding: 96px 30px 66px 30px;
+    padding: 105px 30px 66px 30px;
     border-radius: 0;
   }
 `;
