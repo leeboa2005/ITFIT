@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import SkeletonBar from '../common/ui/Bar';
-import SkeletonCircle from '../common/ui/Circle';
+import SkeletonBar from '../common/Skeleton/Bar';
+import SkeletonCircle from '../common/Skeleton/Circle';
 // 탑3 전체 영역
 const JobPositionTableWrap = styled.div`
   width: 100%;
@@ -14,14 +14,15 @@ const JobPositionTableWrap = styled.div`
 const JobPositionTitle = styled.h1`
   font-weight: 700;
   font-size: 28px;
-  margin: 0 auto 14px auto;
+  margin-top: var(--margin-medium);
+  margin-bottom: var(--margin-small);
   color: #111827;
 `;
 // 탑3 리스트
 const JobPositionRanking = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-bottom: var(--margin-small);
 `;
 const JobItem = styled.li`
   display: flex;
@@ -30,7 +31,6 @@ const JobItem = styled.li`
   flex-wrap: wrap;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
-
   font-size: 20px;
 
   &:last-child {
@@ -71,14 +71,16 @@ const JobNames = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  @media only screen and (max-width: 450px) {
-    max-width: 200px;
-  }
+
   span {
     margin-right: 5px;
     font-weight: 400;
     color: #111827;
     line-height: 1.4;
+  }
+
+  @media only screen and (max-width: 450px) {
+    max-width: 200px;
   }
 `;
 

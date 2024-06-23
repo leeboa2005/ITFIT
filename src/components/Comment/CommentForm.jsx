@@ -85,41 +85,33 @@ const CommentFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
-
   margin: 0px 40px;
-
-  padding: 40px 0px;
+  padding: 0;
 `;
 
 const NicknameInput = styled.input`
   height: 56px;
   padding: 0px 30px;
-
   border: 1px solid #d7d7d7;
-  border-radius: 14px;
-
-  font-size: 20px;
-
+  border-radius: var(--border-radius);
+  font-size: var(--font-text-size-20);
   outline: none;
 
   &::placeholder {
-    color: #c5c5c5;
+    color: var(--text-gray-color-2);
   }
 `;
 
 const CommentTextarea = styled.textarea`
   height: 120px;
   padding: 24px 30px;
-
   border: 1px solid #d7d7d7;
-  border-radius: 14px;
-
-  font-size: 20px;
-
+  border-radius: var(--border-radius);
+  font-size: var(--font-text-size-20);
   outline: none;
 
   &::placeholder {
-    color: #c5c5c5;
+    color: var(--text-gray-color-2);
   }
 `;
 
@@ -129,14 +121,13 @@ const SubmitButton = styled.button`
 
   border: none;
 
-  font-size: 24px;
-  font-weight: bold;
+  font-size: var(--font-text-size-24);
+  font-weight: var(--font-weight-semi-bold);
   color: white;
-
-  background: #5a6afb;
+  background: var(--main-color);
   transition: all 0.3s ease-in-out;
 
   &:disabled {
-    background: #cacaca;
+    background: #d7d7d7;
   }
 `;

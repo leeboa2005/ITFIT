@@ -39,6 +39,10 @@ const HeaderWrapper = styled.header`
   width: 100%;
   padding: 28px 40px;
   background: #fff;
+
+  @media only screen and (max-width: 460px) {
+    padding: 28px 30px;
+  }
 `;
 
 const Logo = styled.img`

@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import '../../asset/font/pretendardvariable.css';
@@ -9,9 +9,9 @@ import VideoDisplay from '../common/VideoDisplay';
 import PercentageTable from './PercentageTable';
 import SharePage from './SharePage';
 
-export default function ResultPageLayout({ jobPositions, isLoading }) {
+export default function ResultPageLayout({ jobPositions, isLoading, setIsLoading }) {
   const location = useLocation();
-  const result = location.state?.result || 'frontend_developer'; // 임시로 '프론트엔드 개발자' 로 설정
+  const result = location.state?.result || 'frontend_developer';
   const navigate = useNavigate();
 
   function handleRetakeTest() {
@@ -25,118 +25,97 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
 
   return (
     <>
-      <Title>
-        <T26>입사를 축하합니다! 당신의 직군은</T26>
-        <T48b>{title}</T48b>
-        <T20>{highlight}</T20>
-      </Title>
-      <TitleImg src={imgUrl} />
+      <ResultTitleContainer>
+        <ResultSubtitle>입사를 축하합니다! 당신의 직군은</ResultSubtitle>
+        <ResultMainTitle>{title}</ResultMainTitle>
+        <ResultHighlightText>{highlight}</ResultHighlightText>
+      </ResultTitleContainer>
+      <ResultTitleImage src={imgUrl} />
 
-      <Section>
-        <T20>{detail}</T20>
-      </Section>
+      <ResultSection>
+        <ResultDetailText>{detail}</ResultDetailText>
+      </ResultSection>
 
-      <Section>
-        <T28>영상으로 보는 직업</T28>
+      <ResultSection>
+        <ResultSectionTitle>영상으로 보는 직업</ResultSectionTitle>
         <VideoDisplay videoId={videoId} width={520} height={285} />
-      </Section>
+      </ResultSection>
 
       <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
 
-      <Section>
+      <ResultSection>
         <SharePage />
-        <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
-      </Section>
+        <ButtonWrap>
+          <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
+        </ButtonWrap>
+      </ResultSection>
 
       <Comment />
     </>
   );
 }
 
-const Section = styled.div`
+const ResultSection = styled.div`
   width: 100%;
-  margin-bottom: 40px;
-  display: block;
+  margin-bottom: var(--margin-medium);
 
   & > button {
-    margin: 5px 0px 0px 0px;
+    margin: 5px 0 0 0;
   }
 `;
 
-const Title = styled.div`
+const ResultTitleContainer = styled.div`
   width: 100%;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  display: block;
+  text-align: var(--text-center);
+  margin-bottom: var(--margin-large);
+  margin-top: var(--margin-large);
+  color: var(--text-color);
 `;
 
-const TitleImg = styled.img`
-  box-sizing: border-box;
+const ResultTitleImage = styled.img`
   height: auto;
   max-width: 100%;
   vertical-align: bottom;
-  margin-bottom: 70px;
+  margin-bottom: var(--margin-large);
 `;
 
-//폰트
-const T48b = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 52px;
-  font-weight: 800;
-  margin-bottom: 30px;
-  color: #111827;
+const ResultMainTitle = styled.p`
+  font-size: var(--font-title-size);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--margin-medium);
 `;
 
-const T36 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 36px;
-  font-weight: 400;
-  color: #333;
+const ResultSubtitle = styled.p`
+  font-size: var(--font-text-size-24);
+  font-weight: var(--font-weight-semi-bold);
+  margin-bottom: var(--margin-small);
 `;
 
-const T28 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 28px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 14px;
+const ResultSectionTitle = styled.p`
+  font-size: var(--font-text-size-28);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--margin-medium);
 `;
 
-const T26 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #111827;
+const ResultHighlightText = styled.p`
+  font-size: var(--font-text-size-20);
+  font-weight: var(--font-weight-light);
+  color: var(--text-gray-color);
 `;
 
-const T22 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 22px;
-  font-weight: 800;
-  color: #111827;
+const ResultDetailText = styled.p`
+  text-align: var(--text-center);
+  font-size: var(--font-text-size-20);
+  font-weight: var(--font-weight-light);
+  color: var(--text-gray-color);
+  margin-bottom: var(--margin-medium);
+  line-height: 1.3;
 `;
 
-const T20 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 20px;
-  font-weight: 300;
-  color: #4b5563;
+const ButtonWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  line-height: 1.2;
-`;
-
-const T18 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 18px;
-  font-weight: 200;
-  color: #a5a5a5;
 `;

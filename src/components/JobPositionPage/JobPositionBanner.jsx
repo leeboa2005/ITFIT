@@ -10,14 +10,16 @@ export default function JobPositionBanner() {
       <BannerText>
         <span>나에게 맞는 직군</span>을 알아보고 싶다면?
       </BannerText>
-      <BannerButton
-        variant="fill"
-        onClick={() => {
-          navigate('/survey');
-        }}
-      >
-        입사 테스트하기
-      </BannerButton>
+      <div>
+        <BannerButton
+          variant="fill"
+          onClick={() => {
+            navigate('/survey');
+          }}
+        >
+          입사 테스트하기
+        </BannerButton>
+      </div>
     </Wrap>
   );
 }
@@ -25,8 +27,7 @@ export default function JobPositionBanner() {
 const Wrap = styled.div`
   width: calc(100% + 80px);
   height: 390px;
-  background-color: rgba(90, 138, 251, 0.1);
-
+  background-color: #5a8afb19;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,9 +38,9 @@ const Wrap = styled.div`
 `;
 
 const BannerText = styled.p`
-  width: 360px;
+  width: 80%;
   text-align: center;
-  font-size: 48px;
+  font-size: var(--font-title-size);
 
   & > span {
     font-weight: bold;

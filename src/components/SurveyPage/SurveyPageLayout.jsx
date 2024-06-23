@@ -123,7 +123,7 @@ const Progress = styled.div`
   width: ${(props) => props.width}%;
   height: 100%;
   border-radius: 20px;
-  background-color: #5a6afb;
+  background-color: var(--main-color);
   transition: width 0.5s ease-in-out;
 `;
 
@@ -138,21 +138,20 @@ const Header = styled.div`
 const BackButton = styled.button`
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: var(--font-text-size-20);
   cursor: pointer;
 `;
 
 const Counter = styled.div`
-  font-size: 20px;
-  font-weight: 700;
-  color: #5a6afb;
+  font-size: var(--font-text-size-20);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--main-color);
 `;
 
 const Question = styled.h2`
-  font-size: 36px;
-  font-weight: 700;
-  color: #333;
-  line-height: 120%;
+  font-size: var(--font-subtitle-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
   letter-spacing: -0.4px;
   margin-bottom: 33px;
 `;
@@ -164,19 +163,15 @@ const Options = styled.div`
   width: 100%;
 `;
 
-const T24 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 20px;
-  font-weight: 700;
-  color: #5a6afb;
+const T24 = styled.p`
+  font-size: var(--font-text-size-20);
+  font-weight: var(--font-weight-bold);
+  color: var(--main-color);
 `;
 
-const T36 = styled.span`
-  display: block;
-  font-family: 'Pretendard';
-  font-size: 36px;
-  font-weight: 700;
+const T36 = styled.p`
+  font-size: var(--font-subtitle-size);
+  font-weight: var(--font-weight-bold);
   color: #333;
   line-height: 120%;
   letter-spacing: -0.4px;

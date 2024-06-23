@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
-import SkeletonBox from './ui/Box';
+import SkeletonBox from './Skeleton/Box';
 
 const VideoContainer = styled.div`
   position: relative;

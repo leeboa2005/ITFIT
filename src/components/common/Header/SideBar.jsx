@@ -67,10 +67,14 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   &:hover {
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 460px) {
+    height: 25px;
+  }
 `;
 
 const SidebarLink = styled(Link)`
   text-decoration: none;
-  font-size: 24px;
-  color: black;
+  font-size: var(--font-text-size-24);
+  color: var(--text-color);
 `;

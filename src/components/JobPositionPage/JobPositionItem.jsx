@@ -24,20 +24,28 @@ export default function JobPositionItem({ item }) {
 
 const ItemWrapper = styled.li`
   width: 100%;
-  min-width: 520px;
+  min-width: 430px;
+  max-width: 520px;
   min-height: 160px;
-
   display: flex;
   gap: 42px;
-
   box-sizing: border-box;
-
   padding: 20px 42px;
-
   border: 1px solid #e5e5e5;
   border-radius: 20px;
-
   cursor: pointer;
+
+  @media only screen and (max-width: 460px) {
+    min-width: inherit;
+    max-width: inherit;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      margin: 0 auto -5px auto;
+    }
+  }
 `;
 
 const ItemTextWrapper = styled.div`
@@ -57,25 +65,34 @@ const ItemTextWrapper = styled.div`
 const ItemLabelText = styled.h3`
   width: 45px;
   height: 20px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 10px;
-  background-color: rgba(90, 106, 251, 0.18);
-
+  background-color: #5a6afb2d;
   font-size: 12px;
   font-weight: bold;
   color: rgb(90, 106, 251);
+
+  @media only screen and (max-width: 460px) {
+    margin: 0 auto 8px auto;
+  }
 `;
 
 const ItemTitleText = styled.h2`
-  font-size: 28px;
+  font-size: var(--font-text-size-28);
   font-weight: bold;
+
+  @media only screen and (max-width: 460px) {
+    text-align: center;
+  }
 `;
 
 const ItemSummaryText = styled.p`
-  font-size: 15px;
+  font-size: var(--font-text-size-18);
   color: #6b7280;
+
+  @media only screen and (max-width: 460px) {
+    text-align: center;
+  }
 `;

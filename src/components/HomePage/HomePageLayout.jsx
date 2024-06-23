@@ -12,14 +12,17 @@ export default function HomePageLayout() {
   return (
     <Content>
       <ImageContainer>
-        <MainImage style={{ height: '300px', width: '300px' }} src={programming} alt="Main이미지" />
+        <MainImage src={programming} alt="Main이미지" />
       </ImageContainer>
       <TextContainer>
-        <T26>어느날 갑자기 IT 회사에 들어간 나</T26>
-        <T48b>
+        <SubtitleText>
+          어느날 갑자기
+          <br className="br-small" /> IT 회사에 들어간 나
+        </SubtitleText>
+        <MainTitleText>
           어떤 IT 직업을 <br />
           갖게 되었을까요?
-        </T48b>
+        </MainTitleText>
         <p>성격별 IT직종 적합테스트</p>
       </TextContainer>
       <Button variant="fill" onClick={handleTestClick}>
@@ -29,18 +32,27 @@ export default function HomePageLayout() {
   );
 }
 
-const T48b = styled.span`
-  font-size: 48px;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 24px;
-  line-height: 110%;
+const MainTitleText = styled.span`
+  font-size: var(--font-title-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin-bottom: var(--margin-medium);
   letter-spacing: -2px;
 `;
-const T26 = styled.span`
-  display: block;
-  font-size: 24px;
+
+const SubtitleText = styled.p`
+  font-size: var(--font-text-size-26);
   font-weight: 500;
-  color: #111827;
-  margin-bottom: 6px;
+  color: var(--text-color);
+  margin-bottom: var(--margin-small);
+
+  .br-small {
+    display: none;
+  }
+
+  @media only screen and (max-width: 460px) {
+    .br-small {
+      display: block;
+    }
+  }
 `;
