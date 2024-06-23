@@ -48,6 +48,7 @@ const JobItem = styled.li`
   .job-names {
     display: flex;
     flex-wrap: wrap;
+
     span {
       font-weight: var(--font-weight-bold);
       margin-right: 5px;
@@ -58,6 +59,7 @@ const JobItem = styled.li`
     display: flex;
     align-items: center;
     margin-right: 10px;
+
     @media only screen and (max-width: 360px) {
       margin-right: 5px;
     }
@@ -96,6 +98,7 @@ const JobItemNumber = styled.div`
   display: flex;
   align-items: center;
   margin-right: 10px;
+
   div {
     width: 28px;
     height: 28px;

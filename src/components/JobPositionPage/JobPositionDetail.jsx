@@ -48,17 +48,18 @@ const HighlightText = styled.h2`
 
 const DetailText = styled.p`
   width: 100%;
-  font-size: 20px;
+  font-size: var(--font-text-size-20);
   text-align: var(--text-center);
   color: var(--text-gray-color);
   text-align: var(--text-center);
   margin-bottom: 70px;
+  line-height: 1.3;
 `;
 
 const PositionVideoText = styled.p`
   width: 100%;
-  font-weight: bold;
-  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-text-size-28);
   margin-bottom: 16px;
 `;
 

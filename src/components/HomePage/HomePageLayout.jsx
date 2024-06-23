@@ -42,7 +42,7 @@ const MainTitleText = styled.span`
 
 const SubtitleText = styled.p`
   font-size: var(--font-text-size-26);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--text-color);
   margin-bottom: var(--margin-small);
 

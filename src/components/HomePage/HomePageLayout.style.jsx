@@ -19,11 +19,11 @@ export const Content = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: var(--text-center);
 `;
 
 export const CenterTitle = styled.h2`
-  text-align: center;
+  text-align: var(--text-center);
   font-size: 220%;
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--margin-small);

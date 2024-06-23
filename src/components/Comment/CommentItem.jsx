@@ -98,12 +98,12 @@ const ItemActionButton = styled.button`
 `;
 
 const ItemNicknameText = styled.p`
-  font-size: 22px;
-  font-weight: bold;
+  font-size: var(--font-text-size-22);
+  font-weight: var(--font-weight-bold);
 `;
 
 const ItemCommentText = styled.p`
-  font-size: 20px;
+  font-size: var(--font-text-size-20);
   color: #4b5563;
 `;
 
@@ -112,7 +112,7 @@ const ItemEditInput = styled.input`
   min-height: 56px;
   padding: 0px 24px;
 
-  font-size: 20px;
+  font-size: var(--font-text-size-20);
 
   border: 1px solid #e5e5e5;
   border-radius: 14px;
