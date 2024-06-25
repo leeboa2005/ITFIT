@@ -74,11 +74,11 @@ src
 │   │   ├── Header
 │   │   │   ├── Header.jsx
 │   │   │   └── SideBar.jsx
-│   └── ui
+│   └── Skteleton
 │       ├── Bar.js
 │       ├── Box.js
-│       ├── Circle.js
-│       └── VideoDisplay.jsx
+│       └── Circle.js
+│────────VideoDisplay.jsx
 ├── HomePage
 │   ├── HomePageLayout.jsx
 │   └── HomePageLayout.style.jsx
